@@ -1,8 +1,5 @@
 <?php
-$db_host='localhost';
-$db_user='root';
-$db_pass='';
-$db_database='latex';
+require_once('../sys_cfg/latex.cfg.php');
 
 $db = new mysqli($db_host,$db_user,$db_pass,$db_database);
 
