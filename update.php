@@ -6,6 +6,11 @@ print UPDATER_PATH;
 //exit();
 $url = "https://github.com/kinoppol/latex/archive/refs/heads/main.zip";
 $zip_file = UPDATER_PATH."/update/latex.zip";
+$sub_dir='latex-main/';
+
+$exception=array(
+	'conf/db.php',
+);
 
 $zip_resource = fopen($zip_file, "w");
 
@@ -39,5 +44,5 @@ if($zip->open($zip_file) != "true")
  exit();
 } 
 
-$zip->extractSubdirTo($extractPath,'latex-main/');
+$zip->extractSubdirTo($extractPath,$sub_dir,$exception);
 $zip->close();
